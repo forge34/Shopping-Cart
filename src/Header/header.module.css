@@ -16,10 +16,12 @@
 }
 
 .hbtn {
+  background-color: var(--light-green);
+  color: white;
   composes: btn;
   padding: 0.3em 1.2em;
   border-radius: 4px;
-  font-size: 1em;
+  font-size: 1.25em;
   height: 100%;
   margin-right: 3em;
 }
