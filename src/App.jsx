@@ -1,20 +1,14 @@
-import { useState } from 'react'
+import Header from "./Header/header";
+import style from "./common-styles/app.module.css"
+import ItemSection from "./item-section/item-section";
+
 
 const App = () => {
-  const [heading, setHeading] = useState("Magnificent Monkeys");
-
-  const clickHandler = () => {
-    setHeading("Radical Rhinos");
-  };
-
   return (
-    <>
-      <button type="button" onClick={clickHandler}>
-        Click Me
-      </button>
-      <h1 >{heading}</h1>
-      <p>Test</p>
-    </>
+    <div className={style.container}>
+    <Header></Header>
+    <ItemSection></ItemSection>
+    </div>
   );
 };
 

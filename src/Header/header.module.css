@@ -1,0 +1,33 @@
+@import url("../common-styles/main.css");
+
+.container {
+  background-color: var(--dark-gray);
+  display: flex;
+  font-family: "Roboto", sans-serif;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  padding: 0 1.5em;
+}
+
+.icon {
+    filter: invert(100%);
+    margin-left: 1.25em;
+}
+
+.hbtn {
+  composes: btn;
+  padding: 0.3em 1.2em;
+  border-radius: 4px;
+  font-size: 1em;
+  height: 100%;
+  margin-right: 3em;
+}
+
+.hbtn:hover {
+  opacity: 70%;
+}
+
+.heading {
+  margin: 0.3em 0.1em;
+}
