@@ -9,8 +9,16 @@ const App = () => {
   const [ItemNumber, setNumber] = useState(0);
   const [cartItems, setCart] = useState([]);
 
+  function handleAdd(amount,name,price){
+    setCart([...cartItems,{
+      name:name,
+      price:price
+    }])
+    setNumber(prev => prev+amount)
+  }
 
-  const context = [setNumber,useData() ,cartItems]
+
+  const context = [handleAdd,useData() ,cartItems]
 
   return (
     <div className={style.container}>

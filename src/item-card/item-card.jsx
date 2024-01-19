@@ -13,7 +13,7 @@ function Card({ itemName = "Name", itemPrice = "0", imgUrl = "" , set}) {
         <h3 aria-label="item-price">Price : {itemPrice}$</h3>
 
         <button className={styles.cbtn} onClick={() => {
-          set(prev => prev+1)
+          set(1,itemName,itemPrice)
         }}>
           Add to cart
         </button>

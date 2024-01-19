@@ -1,0 +1,10 @@
+@import url("../common-styles/main.css");
+
+.container {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    background-color: var(--night);
+    margin: 10px;
+    padding: 20px;
+}
