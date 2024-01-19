@@ -14,7 +14,9 @@ function Header({ ItemNumber }) {
     <div className={style.container}>
       <h1 className={style.heading}>Shopping Cart</h1>
 
-      <button className={style.hbtn + " push"}>Home</button>
+      <button className={style.hbtn + " push"} onClick={ () => {
+        navigate("/")
+      }}>Home</button>
       <img className={style.icon} src="shopping_cart.svg" onClick={toCart}></img>
       <p>{ItemNumber ? ItemNumber : 0} </p>
     </div>

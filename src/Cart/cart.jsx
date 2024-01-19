@@ -3,10 +3,18 @@ import { useOutletContext } from "react-router-dom";
 import CartItem from "../Cart-items/cart-item";
 import styles from "./cart.module.css";
 
+const sum = (arr) => {
+  return arr.reduce((acc, curr) => {
+    return acc + Number(curr.price)
+  },0);
+};
+
 function CartPage({}) {
   const [, , cartData] = useOutletContext();
 
-  console.log(cartData);
+  const total = sum(cartData);
+  console.log(total);
+
   return (
     <div className={styles.container}>
       {cartData.map((item) => {
@@ -19,8 +27,7 @@ function CartPage({}) {
         );
       })}
 
-      <h1>Total : {  }
-        $</h1>
+      <h1>Total : {total}$</h1>
     </div>
   );
 }
