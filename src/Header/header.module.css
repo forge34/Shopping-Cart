@@ -1,7 +1,7 @@
 @import url("../common-styles/main.css");
 
 .container {
-  background-color: var(--dark-gray);
+  background-color: var(--night);
   display: flex;
   font-family: "Roboto", sans-serif;
   align-items: center;

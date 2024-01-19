@@ -3,17 +3,21 @@
 @import url("colors.css");
 
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--dark-gray);
 }
 
 .error {
-    position: absolute;
-    top:50%;
-    left :40%;
+  position: absolute;
+  top: 50%;
+  left: 40%;
 }
 
 .push {
-    margin-left: auto;
+  margin-left: auto;
 }

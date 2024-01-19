@@ -1,22 +1,22 @@
+import { useOutletContext } from "react-router-dom";
 import styles from "./item-card.module.css";
 import PropTypes from "prop-types";
 
-function Card({ itemName = "Name", itemPrice = "0$", imgUrl = "", onClick }) {
+function Card({ itemName = "Name", itemPrice = "0", imgUrl = "" , set}) {
+
   return (
     <div className={styles.card}>
-
-      <img width={"240px"} height={"240px"}></img>
+      <img src={imgUrl} width={"240px"}></img>
       <div className={styles["card-info"]}>
         <h3 aria-label="item-name">{itemName}</h3>
-        
-        <h3 aria-label="item-price" className="push">
-          {itemPrice}
-        </h3>
 
-        <button className={styles.cbtn} onClick={onClick}>
-          +
+        <h3 aria-label="item-price">Price : {itemPrice}$</h3>
+
+        <button className={styles.cbtn} onClick={() => {
+          set(prev => prev+1)
+        }}>
+          Add to cart
         </button>
-
       </div>
     </div>
   );
@@ -24,9 +24,9 @@ function Card({ itemName = "Name", itemPrice = "0$", imgUrl = "", onClick }) {
 
 Card.propTypes = {
   itemName: PropTypes.string,
-  itemPrice: PropTypes.string,
+  itemPrice: PropTypes.number,
   imgUrl: PropTypes.string,
-  onClick: PropTypes.func,
+  set: PropTypes.func,
 };
 
 export default Card;

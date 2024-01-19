@@ -9,22 +9,28 @@ function useData(params) {
     const abController = new AbortController();
 
     async function FetchData() {
-      const res = await fetch(`https://rawg.io/api/games?token&key=${apiKey}` , {
-        signal:abController.signal
-      });
+      try {
+        const res = await fetch(
+          `https://rawg.io/api/games?token&key=${apiKey}`,
+          {
+            signal: abController.signal,
+          }
+        );
 
+        const data = await res.json();
 
-      const data = await res.json();
-
-      console.log(data);
-      setData(data.results);
+        setData(data.results);
+        
+      } catch (error) {
+        console.error(error);
+      }
     }
 
     FetchData();
 
     return () => {
-        abController.abort()
-    }
+      abController.abort();
+    };
   }, []);
 
   return data;
