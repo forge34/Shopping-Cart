@@ -1,12 +1,32 @@
-import styles from "./item-card.module.css"
+import styles from "./item-card.module.css";
+import PropTypes from "prop-types";
 
-export default function Card(){
+function Card({ itemName = "Name", itemPrice = "0$", imgUrl = "", onClick }) {
+  return (
+    <div className={styles.card}>
 
-    return <div className={styles.card}>
-        <img width={"320px"} height={"320px"}></img>
-        <div className={styles['card-info']}>
-            <h3>Item name</h3>
-            <h3 className="push">Item price $</h3>
-        </div>
+      <img width={"240px"} height={"240px"}></img>
+      <div className={styles["card-info"]}>
+        <h3 aria-label="item-name">{itemName}</h3>
+        
+        <h3 aria-label="item-price" className="push">
+          {itemPrice}
+        </h3>
+
+        <button className={styles.cbtn} onClick={onClick}>
+          +
+        </button>
+
+      </div>
     </div>
+  );
 }
+
+Card.propTypes = {
+  itemName: PropTypes.string,
+  itemPrice: PropTypes.string,
+  imgUrl: PropTypes.string,
+  onClick: PropTypes.func,
+};
+
+export default Card;
