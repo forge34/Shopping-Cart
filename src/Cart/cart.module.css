@@ -1,7 +1,8 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    width: max-content;
-    margin:10px;
-    align-self: center;
+  display: flex;
+  width: max-content;
+  flex-direction: column;
+  margin: 10px;
+  align-self: center;
+  color: white;
 }

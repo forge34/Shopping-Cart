@@ -5,8 +5,8 @@ import styles from "./cart.module.css";
 
 const sum = (arr) => {
   return arr.reduce((acc, curr) => {
-    return acc + Number(curr.price)
-  },0);
+    return acc + Number(curr.price);
+  }, 0);
 };
 
 function CartPage({}) {
@@ -23,11 +23,12 @@ function CartPage({}) {
             key={item.name}
             name={item.name}
             price={item.price}
+            url={item.url}
           ></CartItem>
         );
       })}
 
-      <h1>Total : {total}$</h1>
+      <h1 >Total : {total}$</h1>
     </div>
   );
 }

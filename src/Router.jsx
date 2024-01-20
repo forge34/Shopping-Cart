@@ -10,16 +10,16 @@ export default function Router() {
       path: "/",
       element: <App></App>,
       errorElement: <ErrorPage></ErrorPage>,
-      children:[
+      children: [
         {
-          path:"/",
-          element:<ItemSection></ItemSection>
+          path: "/",
+          element: <ItemSection></ItemSection>,
         },
         {
-          path:"cart",
-          element:<CartPage></CartPage>
-        }
-      ]
+          path: "cart",
+          element: <CartPage></CartPage>,
+        },
+      ],
     },
   ]);
 

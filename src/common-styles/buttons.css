@@ -1,8 +1,8 @@
 .btn {
-    border-style: none;
-    font-size: 0.75em;
+  border-style: none;
+  font-size: 0.75em;
 }
 
 .btn:hover {
-    opacity: 70%;
+  opacity: 70%;
 }

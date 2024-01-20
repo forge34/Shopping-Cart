@@ -2,8 +2,7 @@ import { useOutletContext } from "react-router-dom";
 import styles from "./item-card.module.css";
 import PropTypes from "prop-types";
 
-function Card({ itemName = "Name", itemPrice = "0", imgUrl = "" , set}) {
-
+function Card({ itemName = "Name", itemPrice = "0", imgUrl = "", set }) {
   return (
     <div className={styles.card}>
       <img src={imgUrl} width={"240px"}></img>
@@ -12,9 +11,12 @@ function Card({ itemName = "Name", itemPrice = "0", imgUrl = "" , set}) {
 
         <h3 aria-label="item-price">Price : {itemPrice}$</h3>
 
-        <button className={styles.cbtn} onClick={() => {
-          set(1,itemName,itemPrice)
-        }}>
+        <button
+          className={styles.cbtn}
+          onClick={() => {
+            set(1, itemName, itemPrice,imgUrl);
+          }}
+        >
           Add to cart
         </button>
       </div>

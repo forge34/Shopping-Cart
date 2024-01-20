@@ -1,9 +1,9 @@
 .container {
-    padding: 10px;
-    display: grid;
-    gap: 20px;
-    grid-template-columns: repeat(4,max-content);
-    grid-auto-rows: max-content;
-    overflow-y: auto;
-    justify-content: space-around;
+  padding: 10px;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(4, max-content);
+  grid-auto-rows: max-content;
+  overflow-y: auto;
+  justify-content: space-around;
 }

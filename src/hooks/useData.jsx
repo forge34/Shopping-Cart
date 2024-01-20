@@ -11,7 +11,7 @@ function useData(params) {
     async function FetchData() {
       try {
         const res = await fetch(
-          `https://rawg.io/api/games?token&key=${apiKey}`,
+          `https://rawg.io/api/games?page_size=40&?token&key=${apiKey}`,
           {
             signal: abController.signal,
           }
@@ -20,7 +20,6 @@ function useData(params) {
         const data = await res.json();
 
         setData(data.results);
-        
       } catch (error) {
         console.error(error);
       }
