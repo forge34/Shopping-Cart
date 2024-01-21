@@ -10,8 +10,8 @@ const App = () => {
   const [cartItems, setCart] = useState([]);
   const [data, isLoading, error] = useData();
 
-  function handleAdd(amount, name, price, url) {
-    console.log(url);
+  function handleAdd(amount, name, price,url) {
+    console.log(url)
     setCart([
       ...cartItems,
       {
