@@ -4,6 +4,8 @@ const apiKey = "081746a99ae44a1181473147fa82d697";
 
 function useData(params) {
   const [data, setData] = useState("");
+  const [isLoading , setLoading] = useState(true)
+  const [error,setError] = useState(true)
 
   useEffect(() => {
     const abController = new AbortController();
@@ -20,19 +22,22 @@ function useData(params) {
         const data = await res.json();
 
         setData(data.results);
+
       } catch (error) {
         console.error(error);
+      } finally {
+        setLoading(false)
       }
     }
 
-    FetchData();
+    FetchData()
 
     return () => {
       abController.abort();
     };
   }, []);
 
-  return data;
+  return [data,isLoading ,error];
 }
 
 export default useData;
